@@ -1,0 +1,25 @@
+# Time Complexity : O(n log n) + O(n) = O(n logn)
+# Space Complexity : O(1)
+
+def countDistinct(arr, n):
+    arr.sort()
+
+    # Traverse the sorted array
+    i = 0
+    while i < n:
+        count = 1
+
+        # Move the index ahead whenever
+        # you encounter  duplicates
+        while i < n - 1 and arr[i] == arr[i + 1]:
+            i += 1
+            count +=1
+
+        print("{0}: {1}".format(arr[i], count))
+        i += 1
+
+
+# Driver Code
+arr = [5, 8, 5, 7, 8, 10]
+n = len(arr)
+countDistinct(arr, n)
